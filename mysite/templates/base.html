@@ -2,14 +2,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}</title>
-  <link href="{% static "css/main.css" %}" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  <div id="content">
-    {% block content %}{% endblock %}
-  </div>
-  <div id="sidebar">
-  </div>
+    <header>
+      <nav>
+        <div>
+          <div>
+            <div>
+              <a href="{% url 'main-home' %}">Domov</a>
+              <a href="{% url 'main-about' %}">O nas</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+      <div>
+        <div>
+          {% block content %}{% endblock %}
+        </div>
+        <div>
+          <div>
+            <h3>Oddelki</h3>
+            <p>
+              <ul>
+                <li><a href="#">Oddelek 0</a></li>
+                <li><a href="#">Oddelek 1</a></li>
+                <li><a href="#">Oddelek 2</a></li>
+                <li><a href="#">Oddelek 3</a></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <footer>
+      <p><a href="{% url 'main-home' %}">© slopython 2022</a></p>
+    </footer>
+
 </body>
 </html>
